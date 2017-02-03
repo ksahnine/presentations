@@ -24,8 +24,87 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>11 à 12 &mdash; #2017-1</h1>
+					<h3>Au programme :</h3>
+					<ul>
+						<li>Normes XL-Deploy</li>
+						<li>Conception d'une API de services REST</li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<h2>Pourquoi normaliser 1/2 ?</h2>
+					<ul>
+						<li>Centraliser les URLs des endpoints de <b>services web</b> (WS SOAP / REST)</li>
+						<li>Centraliser le paramétrage des <b>sources de données</b> (<i>datasources</i>)</li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<h2>Pourquoi normaliser 2/2 ?</h2>
+					<ul>
+						<li>Avoir une <b>grille de lecture cohérente</b> des paramètres applicatifs</li>
+						<li><b>Propager</b> les mises à jour des endpoints des services mutualisés</li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Dictionnaires XL-Deploy pour chaque application</h3>
+					<ul>
+						<li>un dictionnaire <b>appli</b> et/ou <b>infra</b> :
+							<ul>
+								<li><i>&lt;env&gt;</i><code>-appli_</code><i>&lt;iua&gt;</i></li>
+								<li><i>&lt;env&gt;</i><code>-infra_</code><i>&lt;iua&gt;</i></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Dictionnaires XL-Deploy pour chaque application</h3>
+					<ul>
+						<li>où <i>&lt;env&gt;</i> vaut :
+							<ul>
+								<li><code>DEV</code> : environnement de développement</li>
+								<li><code>REC</code> : environnement de recette</li>
+								<li><code>QUA</code> : environnement de qualification</li>
+								<li><code>PRD</code> : environnement de production</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Exemple</h3>
+					<img src="img/xld-dpz.png" />
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Dictionnaires interface 1/2</h3>
+					<p>Toute application exposant une API de services ou des sources de données <b>mutualisées</b> doit <b>exporter</b> un dictionnaire <b>interface</b> :</p>
+					<ul>
+						<li><i>&lt;env&gt;</i><code>-interfaces-</code><i>&lt;iua&gt;</i></li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Dictionnaires interface 2/2</h3>
+					<p>Les noms de paramètre d'un dictionnaire interfaces sont <b>normalisés</b> :</p>
+					<pre>&lt;code_app&gt;.&lt;type&gt;.&lt;ss-type&gt;.&lt;env_logique&gt;.&lt;fonction&gt;.&lt;ss-fonction&gt;.&lt;version&gt;</pre>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Dictionnaires interface 2/2</h3>
+					<img src="https://confluence.eqsmut.intranatixis.com/download/attachments/33720718/image2016-12-5%2015%3A49%3A48.png?version=1&modificationDate=1480949388000&api=v2" />
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Dictionnaires interface 1/2</h3>
+					<p>Toute application consommant des services ou des sources de données <b>mutualisées</b> doit importer les dictionnaires <b>interfaces</b> afférents.</p>
+					<p>Référence et exemples sous <a target="_blank" href="https://confluence.eqsmut.intranatixis.com/display/ECCO/XL+Deploy">Confluence</a>.</p>
+				</section>
+
 			</div>
 		</div>
 
