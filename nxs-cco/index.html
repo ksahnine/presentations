@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>11 à 12 - #2017-01</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -134,9 +134,66 @@
 						</li>
 					</ul>
 				</section>
+
+				<section data-background="#003333">
+					<h2>API REST : points abordés par les normes 1/2</h2>
+					<ul>
+						<li>comment utiliser les verbes HTTP (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>)</li>
+						<li>comment nommer les ressources (URI)</li>
+						<li>comment versionner <small><i>focus à suivre</i></small></li>
+						<li>comment utiliser des codes retour HTTP</li>
+						<li>format des échanges (JSON / UTF-8)</li>
+					</ul>
+				</section>
+
+				<section data-background="#003333">
+					<h2>API REST : points abordés par les normes 2/2</h2>
+					<ul>
+						<li>format des messages d'erreur</li>
+						<li>comment gérer la pagination</li>
+						<li>support du multilinguisme</li>
+						<li>contexte technique</li>
+						<li>faciliter l'exploitation de l'API <small><i>focus à suivre</i></small></li>
+					</ul>
+				</section>
 				
 				<section data-background="#003333">
-					<h2>Un générateur de code ? 1/2</h2>
+					<h2>API REST : focus sur le versioning</h2>
+					<ul>
+						<li>versionner le moins possible</li>
+						<li class="fragment">numéro de version dans l'URL :
+							<ul>
+								<li>exemple : <small><code>http://api.ref-client.cco.natixis.com/v1/rechercher</code></small></li>
+							</ul>
+						</li>
+						<li class="fragment">pas de changement de version en cas :
+							<ul>
+								<li>d'ajout de paramètres de requête</li>
+								<li>d'ajout d'attribut dans les objets métiers</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section data-background="#003333">
+					<h2>API REST : focus sur l'exploitation</h2>
+					<ul>
+						<li class="fragment">identifiant de corrélation dans les <b>logs</b> :
+							<ul>
+								<li>en-tete <code>X-Request-Id</code> contenant un identifiant unique de requête</li>
+							</ul>
+						</li>
+						<li class="fragment">faciliter le <b>monitoring</b> :
+							<ul>
+								<li>exposer un service <code>/ping</code> pour savoir si l'API est accessible</li>
+								<li>exposer un service <code>/healthcheck</code> pour vérifier la disponibilité de composants vitaux de l'API (ex: base de données)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section data-background="#003333">
+					<h2>API REST : un générateur de code ? 1/2</h2>
 					<ul>
 						<li>permettre de démarrer rapidement un projet respectant les normes CCO</li>
 						<li class="fragment">générer le code d'une API REST/JSON déployable sous JBoss EAP 7 (Java EE 7 / JAX-RS 2.0)</li>
@@ -146,8 +203,20 @@
 				</section>
 
 				<section data-background="#003333">
-					<h2>Un générateur de code ? 2/2</h2>
+					<h2>API REST : un générateur de code ? 2/2</h2>
 					<img src="img/rest-codegen.png" />
+				</section>
+
+				<section data-background="#b5533c">
+					<h2>Cartographie du SI CCO</h2>
+					Disponible temporairement sur <a href="http://swriziv01:9090/">http://swriziv01:9090/</a>
+					<img src="https://confluence.eqsmut.intranatixis.com/download/attachments/48076117/image2017-1-19%2018%3A43%3A4.png?version=1&modificationDate=1484847854000&api=v2" />
+				</section>
+
+				<section>
+					<h1>Merci !</h1>
+					<h3>Nous retrouver sur Confluence :</h3>
+					<p><small><a href="https://confluence.eqsmut.intranatixis.com/pages/viewpage.action?pageId=21006058">https://confluence.eqsmut.intranatixis.com/pages/viewpage.action?pageId=21006058</a></small></p>
 				</section>
 
 			</div>
