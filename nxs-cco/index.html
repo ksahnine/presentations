@@ -23,21 +23,34 @@
 		
 		<style>
 			.left {
-			  left:-8.33%;
-			  text-align: left;
-			  float: left;
-			  width:50%;
-			  z-index:-10;
+				left:-8.33%;
+				text-align: left;
+				float: left;
+				width:50%;
+				z-index:-10;
 			}
 
 			.right {
-			  left:31.25%;
-			  top: 75px;
-			  float: right;
-			  text-align: right;
-			  z-index:-10;
-			  width:50%;
-			}		
+				left:31.25%;
+				top: 75px;
+				float: right;
+				text-align: right;
+				z-index:-10;
+				width:50%;
+			}
+			div.has-light-background:after {
+				content: url(img/natixis_light_s.png);
+				position: fixed;
+				bottom: 1em;
+				left: 1.5em;
+			}
+			div.has-dark-background:after {
+				content: url(img/natixis_dark_s.png);
+				position: fixed;
+				bottom: 1em;
+				left: 1.5em;
+			}
+			
 		</style>
 	</head>
 	<body>
