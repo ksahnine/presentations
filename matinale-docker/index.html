@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>11 à 12 - #2017-01</title>
+		<title>Matinale Docker - #2018-03</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -50,7 +50,7 @@
 				bottom: 1em;
 				left: 1.5em;
 			}
-			
+			pree { box-shadow: none !important; }
 		</style>
 	</head>
 	<body>
@@ -89,6 +89,21 @@
 					<h3>Exemple de fabrication d'une app dockerisée</h3>
 					<img src="img/docker-image.png" />
 					<p>L'app dockerisée embarque ses dépendances</p>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Exemple de fabrication d'une app dockerisée</h3>
+					<p>Dockerfile</p>
+					<pre><code data-trim class="dockerfile">FROM payara/micro
+
+ADD target/echo-service.war \
+    /opt/payara/deployments/echo-service.war
+
+EXPOSE 8080
+
+ENTRYPOINT java -jar /opt/payara/payara-micro.jar \
+                --deploymentDir /opt/payara/deployments
+			</code></pre>
 				</section>
 
 			</div>
