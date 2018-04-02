@@ -81,18 +81,18 @@
 				</section>
 
 				<section data-background="#dddddd">
-					<h3>Exemple d'app dockerisée sur le poste de dev</h3>
+					<h3>Démo : app dockerisée sur le poste de dev</h3>
 					<img src="img/docker-local-container.png" />
 				</section>
 
 				<section data-background="#dddddd">
-					<h3>Exemple de fabrication d'une app dockerisée</h3>
+					<h3>Démo : fabrication d'une app dockerisée</h3>
 					<img src="img/docker-image.png" />
 					<p>L'app dockerisée embarque ses dépendances</p>
 				</section>
 
 				<section data-background="#dddddd">
-					<h3>Exemple de fabrication d'une app dockerisée</h3>
+					<h3>Démo : fabrication d'une app dockerisée</h3>
 					<p>Dockerfile</p>
 					<pre><code data-trim class="dockerfile">FROM payara/micro
 
@@ -104,6 +104,28 @@ EXPOSE 8080
 ENTRYPOINT java -jar /opt/payara/payara-micro.jar \
                 --deploymentDir /opt/payara/deployments
 			</code></pre>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Démo : stack locale Java / MySQL</h3>
+					<img src="img/docker-java-mysql.png" />
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Démo : déploiement sur le cloud</h3>
+					<img src="img/docker-cluster.png" />
+					<p>manuellement avec <code>docker-machine</code></p>
+				</section>
+
+				<section data-background="#dddddd">
+					<h3>Ressources sur Github</h3>
+					<p>Repository <code><a href="https://github.com/ksahnine">ksahnine</a></code></p>
+					<ul>
+						<li>Générer rapidement une <a href="https://github.com/ksahnine/quickstart-rest-archetype">API REST Java EE 7</a></li>
+						<li>Docker stack <a href="https://github.com/ksahnine/docker-dev-stacks/tree/master/java-mysql-stack">Java EE / MySQL</a></li>
+						<li>Docker stack <a href="https://github.com/ksahnine/docker-dev-stacks/tree/master/angularjs-java-mysql-stack">AngularJS / Java EE / MySQL</a></li>
+						<li>Docker stack <a href="https://github.com/ksahnine/docker-dev-stacks/tree/master/angular-java-mysql-stack">Angular / Java EE / MySQL</a></li>
+					</ul>
 				</section>
 
 			</div>
