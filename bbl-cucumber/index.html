@@ -107,9 +107,9 @@
             <h3>Description d'un scénario</h3>
             <p>Les étapes :</p>
             <ul>
-              <li class="fragment"><b><code>Given</code></b> un contexte</li>
-              <li class="fragment"><b><code>When</code></b> un événement a lieu</li>
-              <li class="fragment"><b><code>Then</code></b> un résultat est observé</li>
+              <li class="fragment">(<b><code>Given</code></b>) / (<b><code>Etant donné</code></b>) un contexte</li>
+              <li class="fragment">(<b><code>When</code></b>) / (<b><code>Lorsque</code></b>) un événement a lieu</li>
+              <li class="fragment">(<b><code>Then</code></b>) / (<b><code>Alors</code></b>) un résultat est observé</li>
             </ul>
         </section>
 
@@ -123,17 +123,17 @@
 
         Each users with valid credentials could login to the application. 
 
-        <b>Given</b> The user "foobar" exists
-        <b>When</b>  I login as "foobar" with a valid password
+        <b>Given</b> User "lambda" exists
+        <b>When</b>  I login as "lambda" with a valid password
         <b>Then</b>  I should be able to login successfully
 
     <b>Scenario</b>: Unsuccessful sign-in
 
         Each users with wrong credentials could not login to the application. 
 
-        <b>Given</b> The user "foobar" exists
-        <b>When</b>  I login as "foobar" with a wrong password
-        <b>Then</b>  I should see the error message "The login or password is wrong"</pre> 
+        <b>Given</b> User "lambda" exists
+        <b>When</b>  I login as "lambda" with a wrong password
+        <b>Then</b>  I should have the error message "The login or password is incorrect"</pre> 
         </section>
 
         <section data-background="#dddddd">
