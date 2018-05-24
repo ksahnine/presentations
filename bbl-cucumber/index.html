@@ -59,7 +59,7 @@
       <div class="slides">
         <section>
           <h1>BBL F&F &mdash; S01E02</h1>
-          <h4>Pratique du BDD avec Cucumber Java</h4>
+          <h4>Pratique du BDD avec Cucumber JVM (Java)</h4>
           <ul>
             <li>Introduction</li>
             <li>Développer et tester un composant</li>
@@ -74,7 +74,7 @@
             <li>Behavior-Driven Development</li>
             <li class="fragment">Pratique dérivant du Test-Driven Development (<b>TDD</b>)</li>
             <li class="fragment">Décrit le <b>comportement attendu</b> du système (ce que ça doit faire)</li>
-            <li class="fragment">Description du comportement <b>lisible</b> par toutes les parties prenantes</li>
+            <li class="fragment">Avec une syntaxe <b>compréhensible</b> par toutes les parties prenantes</li>
           </ul>
         </section>
 
@@ -82,14 +82,15 @@
             <h3>Trois amigos !</h3>
             <p>BA, dev et testeurs : partager la même vision</p>
             <img src="img/three-amigos.png" />
+	    <q class="fragment">une pratique fondée sur la collaboration</q>
         </section>
 
         <section data-background="#dddddd">
           <h2>BDD, une pratique collaborative</h2>
           <ul>
-            <li class="fragment">Interactions productives entre BA, testeurs et dev par la <b>spécification par l'exemple</b></li>
             <li class="fragment">Utilise un formalisme en langage courant compréhensible par toutes les acteurs : langage <b>Gherkin</b></li>
-            <li class="fragment">Permets aux fonctionnels et développeurs de rédiger de manière <b>collaborative</b> les cas de tests (<i>scénarios</i>)</li>
+            <!--li class="fragment">Interactions productives entre BA, testeurs et dev par la <b>spécification par l'exemple</b></li-->
+            <li class="fragment">Permets aux BA, devs et testeurs de rédiger de manière <b>collaborative</b> les scénarios de tests <span class="fragment">en particulier par la <b>spécification par l'exemple</b></span></li>
           </ul>
         </section>
 
@@ -99,7 +100,7 @@
               <li class="fragment">chaque fonctionnalité est décrite dans un fichier texte d'extension <code>.feature</code></li>
               <li class="fragment">commence par le mot clé <code>Feature</code></li>
               <li class="fragment">n'affecte pas le comportement des tests Cucumber</li>
-              <li class="fragment">contient un ou plusieurs scénarios</li>
+              <li class="fragment">contient un ou plusieurs scénarios (mot clé <code>Scenario</code>)</li>
             </ul>
         </section>
 
@@ -139,15 +140,15 @@
         <section data-background="#dddddd">
           <h2>Cucumber</h2>
           <ul>
+            <li class="fragment">Framework de test orienté BDD<span class="fragment">, multi-plateforme (10 langages supportés)</span></li>
             <li class="fragment">Exécute des tests d'acceptance automatisés décrits dans le langage Gherkin</li>
-            <li class="fragment">Outil multi-plateforme (10 langages supportés)</li>
             <li class="fragment">Pilote le process de développement par la pratique du TDD</li>
           </ul>
         </section>
 
         <section data-background="#dddddd">
             <h3>La pyramide de tests</h3>
-            <p>BDD praticable à tous les niveaux</p>
+            <p class="fragment">BDD praticable à tous les niveaux</p>
             <img style="height: 50%; width: 50%;" src="img/pyramide-mike-cohn.jpeg" />
         </section>
 
@@ -296,17 +297,32 @@ Feature: Echo feature
     </section>
 
         <section data-background="#dddddd">
-          <h3>Les hooks - 1/2</h3>
-          <ul class="fragment">
+          <h3>Les hooks</h3>
+          <ul>
             <li>méthodes s'exécutant <b>avant</b> ou <b>après</b> un scénario</li>
-            <li>les hooks sont <b>globaux</b> : s'appliquent sur tous les scénarios</li>
-            <li>en pratique : rénitialisation des données, retour à l'état initial, etc.</li>
-            <li>on peut définir un <b>ordre</b> d'exécution des hooks</li>
+            <li class="fragment">les hooks sont <b>globaux</b> : s'appliquent sur tous les scénarios</li>
+            <li class="fragment">en pratique : rénitialisation des données, retour à l'état initial, etc.</li>
+            <li class="fragment">on peut définir un <b>ordre</b> d'exécution des hooks</li>
           </ul>
         </section>
 
         <section data-background="#dddddd">
-          <h3>Les hooks - 2/2</h3>
+          <h3>Les étiquettes (tags)</h3>
+          <ul>
+            <li>permet d'<b>organiser</b> les features ou les scénarios</li>
+            <li class="fragment">les features ou scénarios peuvent être marqués par <b>un ou plusieurs</b> tags</li>
+            <li class="fragment">en pratique : exécuter un ou plusieurs sous ensembles de scénarios regroupés par tag</li>
+            <li class="fragment">les hooks peuvent également être étiquetés</li>
+          </ul>
+        </section>
+
+        <section data-background="#b5533c">
+          <h2>Démo #2</h2>
+          Hands-on !
+        </section>
+
+        <section data-background="#dddddd">
+          <h3>Les hooks - 1/2</h3>
           <p>Exemple</p>
           <pre>public class MyHooks {
 
@@ -324,7 +340,7 @@ Feature: Echo feature
         </section>
 
         <section data-background="#dddddd">
-				<h3>Les hooks - 3/3</h3>
+				<h3>Les hooks - 2/2</h3>
 				<p>Mise en oeuvre : activation</p>
 				<pre>@RunWith(Cucumber.class)
 @CucumberOptions( format={"pretty"}, 
@@ -336,17 +352,7 @@ public class TodoListRunnerTest {
 		</section>
 
         <section data-background="#dddddd">
-          <h3>Les étiquettes (tags) - 1/3</h3>
-          <ul class="fragment">
-            <li>permet d'<b>organiser</b> les features ou les scénarios</li>
-            <li>les features ou scénarios peuvent être marqués par <b>un ou plusieurs</b> tags</li>
-            <li>en pratique : exécuter un ou plusieurs sous ensembles de scénarios regroupés par tag</li>
-            <li>les hooks peuvent également être étiquetés</li>
-          </ul>
-        </section>
-
-        <section data-background="#dddddd">
-          <h3>Les étiquettes (tags) - 2/3</h3>
+          <h3>Les étiquettes (tags) - 1/2</h3>
           <p>Exemple</p>
           <pre><mark>@pilotage</mark>
 <b>Feature</b>
@@ -361,7 +367,7 @@ public class TodoListRunnerTest {
         </section>
 
         <section data-background="#dddddd">
-          <h3>Les étiquettes (tags) - 3/3</h3>
+          <h3>Les étiquettes (tags) - 2/2</h3>
           <p>Mise en oeuvre</p>
           <pre>@RunWith(Cucumber.class)
 @CucumberOptions( format={"pretty"}, 
@@ -371,11 +377,6 @@ public class TodoListRunnerTest {
 public class SmokeTestRunnerTest {
 
 }</pre>
-        </section>
-
-        <section data-background="#b5533c">
-          <h2>Démo #2</h2>
-          Hands-on !
         </section>
 
         <section data-background="#003333">
@@ -397,6 +398,11 @@ public class SmokeTestRunnerTest {
           <h3>Test d'intégration d'une API REST</h3>
           <p>Rest Assured : librairie de test d'API REST</p>
           <img src="img/rest-assured.png" />
+        </section>
+
+        <section data-background="#b5533c">
+          <h2>Démo #3</h2>
+          Hands-on !
         </section>
 
         <section data-background="#dddddd">
@@ -424,11 +430,6 @@ public class SmokeTestRunnerTest {
 }</pre>
         </section>
 
-        <section data-background="#b5533c">
-          <h2>Démo #3</h2>
-          Hands-on !
-        </section>
-
         <section data-background="#003333">
           <h2>BDD et tests de bout en bout</h2>
         </section>
@@ -437,6 +438,11 @@ public class SmokeTestRunnerTest {
           <h3>Tests e2e depuis une IHM web</h3>
           <p>Selenium en local</p>
           <img src="img/selenium.jpeg" />
+        </section>
+
+        <section data-background="#b5533c">
+          <h2>Démo #4</h2>
+          Hands-on !
         </section>
 
         <section data-background="#dddddd">
@@ -502,11 +508,6 @@ public class SmokeTestRunnerTest {
     }
   }
 }</pre>
-        </section>
-
-        <section data-background="#b5533c">
-          <h2>Démo #4</h2>
-          Hands-on !
         </section>
 
         <section>
