@@ -297,6 +297,21 @@ Feature: Echo feature
 </pre>
     </section>
 
+        <section data-background="#003333">
+          <h2>Tags et hooks</h2>
+        </section>
+
+        <section data-background="#dddddd">
+          <h3>Les étiquettes (tags)</h3>
+          <ul>
+            <li>un tag est un mot clé préfixé par <code>@</code> <span class="fragment">(ex : <code>@admin</code>)</span></li>
+            <li class="fragment">les features ou scénarios peuvent être marqués par <b>un ou plusieurs</b> tags</li>
+            <li class="fragment">permet d'<b>organiser</b> les features ou les scénarios</li>
+            <li class="fragment">en pratique : exécuter un ou plusieurs sous ensembles de scénarios regroupés par tag</li>
+            <li class="fragment">les hooks peuvent également être étiquetés</li>
+          </ul>
+        </section>
+
         <section data-background="#dddddd">
           <h3>Les hooks</h3>
           <ul>
@@ -307,19 +322,37 @@ Feature: Echo feature
           </ul>
         </section>
 
-        <section data-background="#dddddd">
-          <h3>Les étiquettes (tags)</h3>
-          <ul>
-            <li>permet d'<b>organiser</b> les features ou les scénarios</li>
-            <li class="fragment">les features ou scénarios peuvent être marqués par <b>un ou plusieurs</b> tags</li>
-            <li class="fragment">en pratique : exécuter un ou plusieurs sous ensembles de scénarios regroupés par tag</li>
-            <li class="fragment">les hooks peuvent également être étiquetés</li>
-          </ul>
-        </section>
-
         <section data-background="#b5533c">
           <h2>Démo #2</h2>
           Hands-on !
+        </section>
+
+        <section data-background="#dddddd">
+          <h3>Les étiquettes (tags) - 1/2</h3>
+          <p>Exemple</p>
+          <pre><mark>@pilotage</mark>
+<b>Feature</b>
+
+    Statistiques d'activité
+
+    <mark>@business</mark>
+    <b>Scenario:</b> Rapport d'ouverture de comptes
+
+    <mark>@technical</mark>
+    <b>Scenario:</b> Consommation mémoire</pre>
+        </section>
+
+        <section data-background="#dddddd">
+          <h3>Les étiquettes (tags) - 2/2</h3>
+          <p>Mise en oeuvre</p>
+          <pre>@RunWith(Cucumber.class)
+@CucumberOptions( format={"pretty"}, 
+                  features="classpath:features", 
+                  glue="bdd.demo.steps",
+                  <b>tags={"@smoketest"}</b>)
+public class SmokeTestRunnerTest {
+
+}</pre>
         </section>
 
         <section data-background="#dddddd">
@@ -351,34 +384,6 @@ public class TodoListRunnerTest {
 
 }</pre>
 		</section>
-
-        <section data-background="#dddddd">
-          <h3>Les étiquettes (tags) - 1/2</h3>
-          <p>Exemple</p>
-          <pre><mark>@pilotage</mark>
-<b>Feature</b>
-
-    Statistiques d'activité
-
-    <mark>@business</mark>
-    <b>Scenario:</b> Rapport d'ouverture de comptes
-
-    <mark>@technical</mark>
-    <b>Scenario:</b> Consommation mémoire</pre>
-        </section>
-
-        <section data-background="#dddddd">
-          <h3>Les étiquettes (tags) - 2/2</h3>
-          <p>Mise en oeuvre</p>
-          <pre>@RunWith(Cucumber.class)
-@CucumberOptions( format={"pretty"}, 
-                  features="classpath:features", 
-                  glue="bdd.demo.steps",
-                  <b>tags={"@smoketest"}</b>)
-public class SmokeTestRunnerTest {
-
-}</pre>
-        </section>
 
         <section data-background="#003333">
           <h2>BDD et tests d'intégration</h2>
